@@ -1,0 +1,45 @@
+/* pages/order/order.wxss */
+page {
+  height: 100%;
+}
+
+.container {
+  background-color: #f6f6f6;
+}
+
+.order-card {
+  margin-bottom: 10px;
+}
+
+.order-content {
+  padding: 10px 16px;
+}
+
+.order-dish {
+  font-size: 13px;
+  color: #515a6e;
+  margin-right: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.order-price {
+  font-size: 13px;
+  float: right;
+}
+
+.order-footer {
+  text-align: right;
+}
+
+.bottom-bar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.tips {
+  font-size: 13px;
+  color: #808695;
+}

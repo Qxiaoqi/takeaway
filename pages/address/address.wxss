@@ -1,0 +1,50 @@
+/* pages/address/address.wxss */
+.add-button {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  color: #2d8cf0;
+}
+
+.add-icon {
+  vertical-align: -3px;
+  margin-right: 5px;
+  color: #2d8cf0;
+}
+
+.address-list {
+  background-color: #ffffff;
+}
+
+.address-item {
+  width: 100%;
+  border-bottom: 1px solid #eeeeee;
+  display: table;
+}
+
+.item-header text {
+  color: #929292;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.item-content {
+  color: #929292;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.left {
+  display: table-cell;
+  padding: 16px;
+}
+
+.right {
+  display: table-cell;
+  width: 20%;
+  margin-left: 5px;
+  color: #2d8cf0;
+  vertical-align:middle;
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tag": "/miniprogram_npm/@vant/weapp/tag/index",
+    "van-grid": "/miniprogram_npm/@vant/weapp/grid/index",
+    "van-grid-item": "/miniprogram_npm/@vant/weapp/grid-item/index",
+    "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet/index",
+    "van-panel": "/miniprogram_npm/@vant/weapp/panel/index"
+  },
+  "navigationBarTitleText": "商家首页"
+}

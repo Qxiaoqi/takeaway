@@ -1,0 +1,86 @@
+/* pages/manage/m-index/m-index.wxss */
+.shop-card {
+  position: relative;
+  padding: 10px 30rpx 20px 30rpx;
+  background-color: #2d8cf0;
+  /* height: 200rpx; */
+}
+
+.left {
+  float: left;
+  /* width: 20%; */
+  width: 150rpx;
+  height: 150rpx;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 0;
+  background-color: #ffffff;
+}
+
+.right {
+  padding-left: 15px;
+  overflow: hidden;
+}
+
+.shop-image {
+  width: 100%;
+  height: 100%;
+}
+
+.shop-title {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.shop-desc {
+  padding-top: 15px;
+  color: #ececec;
+  font-size: 13px;
+  /* color: #ffffff; */
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+.print-block {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.print-block {
+  text-align: center;
+}
+
+.text-success {
+  color: #19be6b;
+}
+
+.text-error {
+  color: #808695;
+}
+
+.bill-block {
+  margin-top: 10px;
+}
+
+.bill-content {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bill-info {
+  color: #808695;
+}
+
+.bill-number {
+  padding-top: 10px;
+}
+
+.bill-footer {
+  text-align: right;
+  padding: 10px;
+}

@@ -1,0 +1,86 @@
+<!--pages/manage/m-bill/m-bill.wxml-->
+<view class="container">
+  <!-- tab标签页 -->
+  <van-tabs active="{{ timeType }}" id="tabs" color="#2d8cf0" bind:change="choseType" sticky>
+    <van-tab title="日账单" name="day">
+      <!-- 选择日期 -->
+      <van-cell
+        is-link
+        value="{{ day }}"
+        arrow-direction="down"
+        bind:click="selectTime"
+      >
+        <view slot="title">
+          <view class="van-cell-text">选择日期
+            <van-loading size="16px" class="loading" wx:if="{{ loadingDay }}" />
+          </view>
+        </view>
+      </van-cell>
+
+      <view class="tabs-content">
+        <!-- 账单列表 -->
+        <view class="bill-card">
+          <van-panel title="{{ day }}" status="营业额">
+            <view class="bill-content">
+              <view class="bill-info">当日营业额</view>
+              <view class="bill-number">￥{{ dayBillNumber }}</view>
+            </view>
+          </van-panel>
+        </view>
+      </view>
+    </van-tab>
+
+    <van-tab title="月订单" name="month">
+      <!-- 选择月份 -->
+      <van-cell
+        is-link
+        value="{{ month }}"
+        arrow-direction="down"
+        bind:click="selectTime"
+      >
+        <view slot="title">
+          <view class="van-cell-text">选择月份
+            <van-loading size="16px" class="loading" wx:if="{{ loadingMonth }}" />
+          </view>
+        </view>
+      </van-cell>
+
+      <view class="tabs-content">
+        <!-- 账单 -->
+        <view class="bill-card">
+          <van-panel title="{{ month }}" status="营业额">
+            <view class="bill-content">
+              <view class="bill-info">当月营业额</view>
+              <view class="bill-number">￥{{ monthBillNumber }}</view>
+            </view>
+          </van-panel>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+
+  <van-popup
+    show="{{ popupShow }}"
+    position="bottom"
+    bind:close="closePopup"
+  >
+    <van-datetime-picker
+      wx:if="{{ timeType === 'day' }}"
+      type="date"
+      value="{{ currentDateDay }}"
+      bind:confirm="choseDay"
+      min-date="1577849405139"
+      max-date="{{ maxDate }}"
+      formatter="{{ formatter }}"
+    />
+    <van-datetime-picker
+      wx:if="{{ timeType === 'month' }}"
+      type="year-month"
+      value="{{ currentDateMonth }}"
+      bind:confirm="choseMonth"
+      min-date="1577849405139"
+      max-date="{{ maxDate }}"
+      formatter="{{ formatter }}"
+    />
+  </van-popup>
+</view>

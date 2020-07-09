@@ -1,0 +1,59 @@
+<!--pages/manage/m-print/m-print.wxml-->
+<wxs module="utils">
+  module.exports.max = function(n1, n2) {
+  return Math.max(n1, n2)
+  }
+  module.exports.len = function(arr) {
+  arr = arr || [];
+  return arr.length;
+  }
+</wxs>
+<!-- 停止扫描有问题，扫描不会显示之前扫描过的 -->
+<!-- 这里其实是因为，可能有中断搜索的情况，因此不会立即找到新的 -->
+<view class="container">
+
+  <view class="page-section">
+    <view class="devices-summary">已发现 {{ devices.length }} 个外围设备：</view>
+    <scroll-view class="device-list" scroll-y scroll-with-animation>
+      <view wx:for="{{ devices }}" wx:key="index" data-device-id="{{ item.deviceId }}" data-name="{{ item.name || item.localName }}" bindtap="createBLEConnection" class="device-item" hover-class="device-item-hover">
+        <view style="font-size: 16px; color: #333;">{{ item.name }}</view>
+        <view style="font-size: 10px">信号强度: {{ item.RSSI }}dBm ({{ utils.max(0, item.RSSI + 100) }}%)</view>
+        <view style="font-size: 10px">UUID: {{ item.deviceId }}</view>
+        <view style="font-size: 10px">Service数量: {{ utils.len(item.advertisServiceUUIDs) }}</view>
+      </view>
+    </scroll-view>
+    <view class="btn-area">
+      <view class="connected-info">
+        <van-button color="#2d8cf0" bindtap="openBluetoothAdapter" block>开始扫描</van-button>
+        <van-button bindtap="stopBluetoothDevicesDiscovery" custom-style="margin-top: 10px;" block>停止扫描</van-button>
+      </view>
+    </view>
+  </view>
+  <view class="page-section connected-area" wx:if="{{ lastDevice }}">
+    <view class="connected-info">
+      <text class="text-info" style="font-size: 30rpx">最近连接的设备</text>
+      <view>{{ lastDevice }}</view>
+      <view class="btn-area">
+        <van-button color="#2d8cf0" bindtap="createBLEConnectionWithDeviceId" block>直接连接</van-button>
+      </view>
+    </view>
+  </view>
+  <view class="page-section connected-area" wx:if="{{ connected }}">
+    <view class="connected-info">
+      <text class="text-info" style="font-size: 30rpx">已连接到 {{ name }}</text>
+      <view wx:for="{{ chs }}" wx:key="index">
+        <view>特性UUID: {{ item.uuid }}</view>
+        <view>特性值: {{ item.value }}</view>
+      </view>
+      <view class="btn-area">
+        <van-button color="#2d8cf0" wx:if="{{ canWrite }}" bindtap="writeBLECharacteristicValue" custom-style="margin-bottom: 10px;" block>
+          测试打印
+        </van-button>
+        <van-button bindtap="closeBLEConnection" block>断开连接</van-button>
+        <!-- <van-button bindtap="closeBluetoothAdapter" block>断开蓝牙</van-button> -->
+      </view>
+    </view>
+  </view>
+
+
+</view>

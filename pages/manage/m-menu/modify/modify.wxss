@@ -1,0 +1,20 @@
+/* pages/manage/m-menu/modify/modify.wxss */
+.content {
+  background-color: #ffffff;
+}
+
+.upload {
+  padding-top: 16px;
+}
+
+.cell-title {
+  float: left;
+  padding-left: 16px;
+  min-width: 90px;
+  font-size: 14px;
+  color: #323233;
+}
+
+.submit {
+  padding: 10px;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-uploader": "/miniprogram_npm/@vant/weapp/uploader/index"
+  },
+  "navigationBarTitleText": "添加菜品"
+}

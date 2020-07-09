@@ -1,0 +1,150 @@
+/**index.wxss**/
+/* 强制改变样式 */
+.van-search {
+  background-color: #2d8cf0 !important;
+}
+
+/* 三个 banner的样式 */
+.banner1 {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: url("https://www.ecanteens.cn/files/images/pjwhOatWsP/065d7536-eca5-4e7d-9bb3-a2844579dce2.jpg"); */
+  /* background-image: url("https://www.ecanteens.cn/files/images/pjwhOatWsP/43fb277d-46b7-4653-9768-5cd6d76be986.jpg"); */
+  /* background-image: url("https://www.ecanteens.cn/files/images/pjwhOatWsP/1b53096e-7a4b-41a5-a8d1-439590422bb1.jpg"); */
+  background-image: url("https://www.ecanteens.cn/files/images/pjwhOatWsP/9b8a6e27-7fb1-42d1-99dc-79f00d68c325.jpg");
+  /* background-color: rgba(224, 224, 224, 0.933); */
+}
+
+.banner2 {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://www.ecanteens.cn/files/images/pjwhOatWsP/eeb0ff32-04f4-40c5-a9f5-514d567566da.jpg");
+}
+
+.banner3 {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: url("https://www.ecanteens.cn/files/images/pjwhOatWsP/3c05f7ef-3b21-472e-9ea7-4e10cedefb10.jpg");
+}
+
+
+/* 导航栏 */
+.nav {
+  /* background-color: #f6f6f6; */
+  padding: 5px 0;
+}
+
+.tab-content {
+  padding-top: 10px;
+  background-color: #ffffff;
+}
+
+.auth-content {
+  padding: 15px;
+}
+
+.auth-content text {
+  color: #808695;
+  font-size: 14px;
+}
+
+.auth-button {
+  margin-top: 10px;
+  background-color: #2d8cf0;
+  color: #ffffff;
+}
+
+.tips-content {
+  padding: 10px;
+  text-align: center;
+  /* background-color: #ffffff; */
+  background-color: #f6f6f6;
+  color: #808695;
+  font-size: 13px;
+}
+
+.loading-content {
+  /* padding: 10px; */
+  text-align: center;
+}
+
+.grid-icon {
+  width: 100rpx;
+  height: 80rpx;
+}
+
+
+/* type="card"
+custom-class="custom-class"
+nav-class="nav-class"
+tab-class="tab-class"
+tab-active-class="tab-active-class"
+.custom-class {
+  background-color: #ffffff;
+}
+
+.nav-class {
+  border: none !important;
+}
+
+.tab-class {
+  color: #000000 !important;
+  border: none !important;
+}
+
+.tab-active-class {
+  background: #ffffff !important;
+  border-bottom: 3px solid #2d8cf0 !important;
+}
+
+.van-tabs__scroll--card {
+
+}
+
+.van-tabs--card .van-tabs__wrap {
+  height: 40px !important;
+}
+
+.van-tabs__nav--card .van-tab {
+  height: 40px !important;
+}
+
+.van-ellipsis {
+  height: 40px !important;
+  line-height: 40px !important;
+} */
+
+
+
+/* .van-tabs__line {
+  transition: none !important;
+} */
+
+
+
+
+
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */

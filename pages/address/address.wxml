@@ -1,0 +1,35 @@
+<!--pages/address/address.wxml-->
+<view class="container">
+  <view class="add-button" bindtap="jumpAddAddress">
+    <van-icon name="add-o" class="add-icon" />新增地址
+  </view>
+  <view class="address-list">
+    <view wx:for="{{ addressList.arr }}" wx:key="index">
+      <view class="address-item">
+        <view class="left">
+          <view class="item-header">{{ item.name }}
+            <van-tag type="success" wx:if="{{ index === addressList.def }}">默认</van-tag>
+            <text></text>
+            <text>{{ item.phone }}</text>
+          </view>
+          <view class="item-content">{{ item.address }}</view>
+        </view>
+        <view class="right" data-idx="{{ index }}" bindtap="jumpModAddress">
+          <van-icon name="edit" size="30px"/>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="address-item">
+      <view class="left">
+        <view class="item-header">收件人
+          <text>15751839999</text>
+        </view>
+        <view class="item-content">南京信息工程大学沁园22栋栋栋栋栋栋栋栋栋栋栋栋栋</view>
+      </view>
+      <view class="right">
+        <van-icon name="edit" size="30px"/>
+      </view>
+    </view> -->
+  </view>
+</view>

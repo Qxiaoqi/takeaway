@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-panel": "/miniprogram_npm/@vant/weapp/panel/index",
+    "van-sticky": "/miniprogram_npm/@vant/weapp/sticky/index",
+    "van-datetime-picker": "/miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index"
+  },
+  "navigationBarTitleText": "收入查询"
+}

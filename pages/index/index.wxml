@@ -1,0 +1,161 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 搜索栏暂时不需实现 -->
+  <view class="search-bar">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+  </view>
+
+  <!-- banner栏 -->
+  <view class="swiper">
+    <swiper indicator-dots="{{ indicatorDots }}"
+      autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}">
+      <block wx:for="{{ background }}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item {{ item }}"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="nav">
+    <van-grid column-num="4" border="{{ false }}">
+      <van-grid-item
+        icon="/images/muslim.png"
+        text="水果代"
+        link-type="navigateTo"
+        url="/pages/muslim/muslim"
+      />
+      <van-grid-item
+        icon="/images/dessert.png"
+        text="甜品饮品"
+        link-type="navigateTo"
+        url="/pages/dessert/dessert"
+      />
+      <van-grid-item
+        icon="/images/dormitory.png"
+        text="零食代"
+        link-type="navigateTo"
+        url="/pages/dormitory/dormitory"
+      />
+      <van-grid-item
+        icon="/images/substitute.png"
+        text="代拿服务"
+        link-type="navigateTo"
+        url="/pages/replace/replace"
+      />
+    </van-grid>
+  </view>
+  <!-- tab切换 -->
+  <view class="tabs">
+    <van-tabs
+      active="{{ active }}"
+      id="tabs"
+      bind:change="bindChange"
+      color="#2d8cf0"
+      sticky
+
+    >
+      <!-- 东苑 -->
+      <van-tab title="东苑" name="east">
+        <view class="tab-content" wx:if="{{ !shopEast.isTips }}">
+          <!-- <block wx:for="{{ 10 }}" wx:if="{{ shopEast.isloading }}" wx:key="index">
+            <van-skeleton
+              title
+              avatar
+              row="2"
+              avatar-shape="square"
+              avatar-size="50px"
+              animate="{{ true }}"
+            />
+          </block> -->
+          <view wx:if="{{ shopEast.isloading }}" class="loading-content">
+            <van-loading size="24px">加载中...</van-loading>
+          </view>
+          <view wx:for="{{ shopEast.data }}" wx:key="id">
+            <shopCard shop="{{ item }}"></shopCard>
+          </view>
+        </view>
+        <view wx:if="{{ shopEast.isTips }}" class="tips-content">
+          该地区暂无店铺
+        </view>
+      </van-tab>
+
+      <!-- 中苑 -->
+      <van-tab title="中苑" name="center">
+        <view class="tab-content" wx:if="{{ !shopCenter.isTips }}">
+          <!-- <block wx:for="{{ 10 }}" wx:if="{{ shopCenter.isloading }}" wx:key="index">
+            <van-skeleton
+              title
+              avatar
+              row="2"
+              avatar-shape="square"
+              avatar-size="50px"
+              animate="{{ true }}"
+            />
+          </block> -->
+          <view wx:if="{{ shopCenter.isloading }}" class="loading-content">
+            <van-loading size="24px">加载中...</van-loading>
+          </view>
+          <view wx:for="{{ shopCenter.data }}" wx:key="id">
+            <shopCard shop="{{ item }}"></shopCard>
+          </view>
+        </view>
+        <view wx:if="{{ shopCenter.isTips }}" class="tips-content">
+          该地区暂无店铺
+        </view>
+      </van-tab>
+
+      <!-- 西苑 -->
+      <van-tab title="西苑" name="west">
+        <view class="tab-content" wx:if="{{ !shopWest.isTips }}">
+          <!-- <block wx:for="{{ 10 }}" wx:if="{{ shopWest.isloading }}" wx:key="index">
+            <van-skeleton
+              title
+              avatar
+              row="2"
+              avatar-shape="square"
+              avatar-size="50px"
+              animate="{{ true }}"
+            />
+          </block> -->
+          <view wx:if="{{ shopWest.isloading }}" class="loading-content">
+            <van-loading size="24px">加载中...</van-loading>
+          </view>
+          <view wx:for="{{ shopWest.data }}" wx:key="id">
+            <shopCard shop="{{ item }}"></shopCard>
+          </view>
+        </view>
+        <view wx:if="{{ shopWest.isTips }}" class="tips-content">
+          该地区暂无店铺
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  
+  <van-toast id="van-toast" />
+
+  <!-- 授权弹窗 -->
+  <van-dialog
+    use-slot
+    title="请求授权"
+    show="{{ show }}"
+    custom-style="border-radius: 4px;"
+    showConfirmButton="{{ false }}"
+  >
+    <view class="auth-content">
+      <text >授权获取微信头像昵称</text>
+      <button class="auth-button" wx:if="{{ canIUse }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权获取微信头像昵称</button>
+    </view>
+  </van-dialog>
+
+  <!-- <van-popup
+    show="{{ show }}"
+    bind:close="closeAuth"
+  >
+    <view class="auth-content">
+      <text >授权获取微信头像昵称</text>
+      <button class="auth-button" wx:if="{{ canIUse }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权获取</button>
+    </view>
+  </van-popup> -->
+</view>

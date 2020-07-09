@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-panel": "/miniprogram_npm/@vant/weapp/panel/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "商家配送",
+  "onReachBottomDistance": 50,
+  "enablePullDownRefresh": true
+}

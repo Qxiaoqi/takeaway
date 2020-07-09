@@ -1,0 +1,48 @@
+<!--pages/manage/m-menu/modify/modify.wxml-->
+<view class="container">
+  <view class="content">
+    <van-toast id="van-toast" />
+    <van-dialog id="van-dialog" />
+    <van-cell-group>
+      <van-field
+        value="{{ oldDish.name }}"
+        label="菜品名称："
+        placeholder="请输入菜品名"
+        bind:input="setName"
+      />
+
+      <van-field
+        value="{{ oldDish.description }}"
+        label="描述信息："
+        placeholder="请输入菜品描述"
+        bind:input="setDesc"
+      />
+
+      <van-field
+        value="{{ oldDish.price }}"
+        type="digit"
+        label="菜品价格："
+        placeholder="最多精确到后两位"
+        bind:input="setPrice"
+      />
+
+    </van-cell-group>
+
+    <view class="upload">
+      <view class="cell-title">菜品图片：</view>
+      <van-uploader
+        file-list="{{ fileList }}"
+        max-count="1"
+        bind:after-read="afterRead"
+        bind:delete="deleteImg"
+      />
+    </view>
+  </view>
+  <view class="submit">
+    <van-button type="primary" bindtap="modifyDish" block>修改菜品</van-button>
+  </view>
+  <view class="submit">
+    <van-button type="danger" bindtap="deleteDish" block>删除菜品</van-button>
+  </view>
+</view>
+

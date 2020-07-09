@@ -1,0 +1,14 @@
+/* pages/replace/replace.wxss */
+.container {
+  /* padding-top: 10px; */
+  /* background-color: #ffffff; */
+}
+
+.tips-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #f6f6f6;
+  color: #808695;
+  font-size: 13px;
+}

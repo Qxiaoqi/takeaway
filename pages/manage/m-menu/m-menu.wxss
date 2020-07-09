@@ -1,0 +1,31 @@
+/* pages/manage/m-menu/m-menu.wxss */
+.container {
+  background-color: #ffffff;
+}
+
+.container .van-card {
+  background-color: #ffffff;
+}
+
+.add-button {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  color: #2d8cf0;
+}
+
+.add-icon {
+  vertical-align: -3px;
+  margin-right: 5px;
+  color: #2d8cf0;
+}
+
+.content {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.operation .van-button {
+  float: right;
+}

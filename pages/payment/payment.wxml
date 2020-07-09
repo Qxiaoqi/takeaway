@@ -1,0 +1,116 @@
+<!--pages/payment/payment.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+  <!-- 确认订单头部 -->
+  <view class="address-panel">
+    <van-cell>
+      <view slot="title">
+        <view class="van-cell-text header-title">订单配送至 ></view>
+      </view>
+    </van-cell>
+    <van-cell
+      wx:if="{{ addressList.arr.length === 0 }}"
+      title="新增地址"
+      value="暂无可用地址" 
+      link-type="navigateTo"
+      url="/pages/address/add/add"
+      is-link
+    />
+    <view wx:if="{{ addressList.arr.length > 0 }}" class="address-content" bindtap="showSheet">
+      <view class="address-item">
+        <view class="item-header">{{ choseAddress.name }}
+          <text>{{ choseAddress.phone }}</text>
+        </view>
+        <view class="item-content">{{ choseAddress.address }}</view>
+      </view>
+      <view class="icon">
+        <van-icon name="arrow"/>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出地址选择 -->
+  <van-action-sheet
+    z-index="200"
+    title="选择合适地址"
+    show="{{ show }}"
+    round="{{ false }}"
+    bind:close="addressClose"
+  >
+    <view class="sheet-content">
+      <view class="address-content">
+        <view class="address-list">
+          <block wx:for="{{ addressList.arr }}" wx:key="index">
+            <view class="list-item" bindtap="choseAddress" data-idx="{{ index }}">
+              <view class="item-header">{{ item.name }}
+                <van-tag type="success" wx:if="{{ index === addressList.def }}">默认</van-tag>
+                <text>{{ item.phone }}</text>
+              </view>
+              <view class="item-content">{{ item.address }}</view>
+            </view>
+          </block>
+
+        </view>
+      </view>
+    </view>
+  </van-action-sheet>
+  <!-- 价格信息 -->
+  <view class="price-panel">
+    <van-cell-group>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text panel-title">{{ shopName }}</view>
+        </view>
+      </van-cell>
+      <block wx:for="{{ cart }}" wx:key="index">
+        <van-cell value="￥{{ item.price }}">
+          <view slot="title">
+            <view class="van-cell-text">{{ item.dishName }} <text class="count-text" wx:if="{{ item.count > 1 }}">* {{ item.count }}</text></view>
+          </view>
+        </van-cell>
+      </block>
+      <!-- <van-cell value="￥{{ packingCharges }}">
+        <view slot="title">
+          <view class="van-cell-text">包装费</view>
+        </view>
+      </van-cell> -->
+      <van-cell value="￥{{ distributionFee }}">
+        <view slot="title">
+          <view class="van-cell-text">配送费+包装费</view>
+        </view>
+      </van-cell>
+      <van-cell value="￥{{ totalPrice / 100 }}">
+        <view slot="title">
+          <view class="van-cell-text">共计</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <!-- 其它信息 -->
+  <view class="other-panel">
+    <van-cell-group>
+      <van-cell value="在线支付">
+        <view slot="title">
+          <view class="van-cell-text">支付方式</view>
+        </view>
+      </van-cell>
+      <van-field
+        autosize
+        type="textarea"
+        label="备注"
+        input-align="right"
+        placeholder="请输入备注"
+        border="{{ false }}"
+        bind:change="remarkInput"
+      />
+    </van-cell-group>
+  </view>
+
+  <!-- 提交订单 -->
+  <view class="submit">
+    <van-submit-bar
+      price="{{ totalPrice }}"
+      button-text="支付"
+      bind:submit="paySubmit"
+    />
+  </view>
+</view>

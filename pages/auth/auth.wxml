@@ -1,0 +1,20 @@
+<!--pages/auth/auth.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+  <view class="content">
+    <van-icon
+      name="info"
+      color="#2d8cf0"
+      size="200rpx"
+    />
+    <view class="header">
+      <view class="main-title">请求授权</view>
+      <view class="sub-title">
+        申请获取你的公开信息（昵称、头像等）
+      </view>
+    </view>
+  </view>
+  <view class="button">
+    <van-button wx:if="{{ canIUse }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary" block>微信授权</van-button>
+  </view>
+</view>

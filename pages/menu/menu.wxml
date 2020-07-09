@@ -1,0 +1,47 @@
+<!--pages/menu/menu.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+  <view class="header clearfix">
+    <view class="header-background"></view>
+    <view class="header-content">
+      <shopCard shop="{{ shop }}" islink="{{ false }}"></shopCard>
+    </view>
+  </view>
+
+  <view class="tabs">
+    <van-tabs active="order" color="#2d8cf0" border="{{ false }}">
+      <van-tab title="服务" name="order">
+        <view class="tab-content">
+          <view wx:for="{{ dish }}" wx:key="id">
+            <van-card
+              price="{{ item.price }}"
+              desc="{{ item.description }}"
+              title="{{ item.name }}"
+              thumb="{{ item.avatar }}"
+            >
+              <view slot="bottom">
+                <view class="operation">
+                  <view class="plus-left" hidden="{{ cart[index].count <= 0 }}">
+                    <text class="icon" bindtap="dishReduce" data-idx="{{ index }}">-</text>
+                    <text class="number">{{ cart[index].count }}</text>
+                  </view>
+                  <text class="icon" bindtap="dishPlus" data-idx="{{ index }}">+</text>
+                </view>
+              </view>
+            </van-card>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+
+  <!-- 提交订单 -->
+  <view class="submit">
+    <van-submit-bar
+      disabled="{{ restaurantStatusCode === 0 ? true : false }}"
+      price="{{ totalPrice }}"
+      button-text="{{ restaurantStatusCode === 0 ? '已休息' : '提交订单'}}"
+      bind:submit="orderSubmit"
+    />
+  </view>
+</view>

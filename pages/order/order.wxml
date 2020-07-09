@@ -1,0 +1,31 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+  <!-- <scroll-view scroll-y="true" bindscrolltolower="lower" style="height: 90%"> -->
+  <view class="order-list">
+    <view wx:for="{{ orderList }}" wx:key="id">
+      <view class="order-card" data-idx="{{ index }}" bindtap="jumpOrder">
+        <van-panel title="订单"
+          desc="{{ item.createdTime }}"
+          status="{{ item.statusStr }}"
+          use-footer-slot
+        >
+          <view class="order-content">
+            <text class="order-price">￥{{ item.priceDel }}</text>
+            <view class="order-dish">{{ item.dishList }}</view>
+          </view>
+          <view slot="footer" class="order-footer">
+            <van-button data-idx="{{ index }}" wx:if="{{ item.orderStatusCode !== 1024 ? true : false }}" size="small" catch:tap="confirmService">确认送达</van-button>
+          </view>
+        </van-panel>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <van-loading size="24px" wx:if="{{ loading }}">加载中...</van-loading>
+    <text class="tips" wx:if="{{ isEnd }}">没有新的订单了</text>
+  </view>
+  <!-- </scroll-view> -->
+</view>

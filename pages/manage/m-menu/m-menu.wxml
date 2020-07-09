@@ -1,0 +1,26 @@
+<!--pages/manage/m-menu/m-menu.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+  <van-sticky>
+    <view class="add-button" bindtap="jumpAddMenu">
+      <van-icon name="add-o" class="add-icon" />新增菜品
+    </view>
+  </van-sticky>
+  <view class="content">
+    <view wx:for="{{ dish }}" wx:key="index">
+      <van-card
+        price="{{ item.price }}"
+        desc="{{ item.description }}"
+        title="{{ item.name }}"
+        thumb="{{ item.avatar }}"
+      >
+        <view slot="bottom">
+          <view class="operation">
+            <van-button type="primary" size="small" bindtap="jumpModify" data-idx="{{ index }}">修改</van-button>
+          </view>
+        </view>
+      </van-card>
+    </view>
+  </view>
+</view>
+

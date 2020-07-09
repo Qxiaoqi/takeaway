@@ -1,0 +1,49 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view class="user">
+    <block wx:if="{{ avatar !== '' }}">
+      <van-image
+        round
+        width="90"
+        height="90"
+        src="{{ avatar }}"
+        fit="cover"
+      />
+      <view class="user-name">
+        <open-data type="userNickName" lang="zh_CN"></open-data>
+      </view>
+    </block>
+    <block wx:else>
+      <text class="login-text" bindtap="jumpAuth">点击登录></text>
+    </block>
+  </view>
+  <van-cell-group>
+    <van-cell
+      wx:if="{{ !hasShop }}"
+      icon="apps-o"
+      size="large"
+      is-link
+      title="骑手信息认证"
+      link-type="navigateTo"
+      url="/pages/apply/apply"
+    />
+    <van-cell
+      wx:if="{{ hasShop }}"
+      icon="shop-o"
+      size="large"
+      is-link
+      title="骑手入口"
+      link-type="navigateTo"
+      url="/pages/manage/m-index/m-index"
+    />
+    <van-cell
+      icon="location-o"
+      size="large"
+      is-link
+      title="收货地址"
+      link-type="navigateTo"
+      url="/pages/address/address"
+    />
+  </van-cell-group>
+
+</view>

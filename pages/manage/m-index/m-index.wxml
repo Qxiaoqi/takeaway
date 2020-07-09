@@ -1,0 +1,96 @@
+<!--pages/manage/m-index/m-index.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+  <view class="header">
+    <view class="shop-card clearfix">
+      <view class="left">
+        <!-- <view class="left-content"> -->
+          <image src="{{ shop.avatar }}" mode="aspectFit" class="shop-image"></image>
+        <!-- </view> -->
+      </view>
+      <view class="right">
+        <view class="shop-header">
+          <view class="shop-title" bindtap="selectStatus">{{ shop.name }}
+            <van-tag
+              color="{{ restaurantStatusCode === 1 ? '#19be6b' : '#c5c8ce' }}"
+            >{{ restaurantStatusCode === 1 ? '营业中' : '休息中' }}</van-tag>
+          </view>
+        </view>
+        <view class="shop-desc" bindtap="jumpShop">修改店铺信息></view>
+      </view>
+    </view>
+  </view>
+
+  <van-action-sheet
+    show="{{ show }}"
+    actions="{{ actions }}"
+    round="{{ false }}"
+    bind:close="closeSheet"
+    bind:select="selectSheet"
+  />
+
+  <!-- 导航栏 -->
+  <view class="nav">
+    <van-grid>
+      <van-grid-item
+        text="信息发布"
+        link-type="navigateTo"
+        url="/pages/manage/m-menu/m-menu"
+      >
+        <view slot="icon">
+          <van-icon name="shop" color="#ffbb54" />
+        </view>
+      </van-grid-item>
+      <van-grid-item
+        text="订单"
+        link-type="navigateTo"
+        url="/pages/manage/m-order/m-order"
+      >
+        <view slot="icon">
+          <van-icon name="todo-list" color="#FF8E66" />
+        </view>
+      </van-grid-item>
+      <van-grid-item
+        text="财务"
+        link-type="navigateTo"
+        url="/pages/manage/m-bill/m-bill"
+      >
+        <view slot="icon">
+          <van-icon name="gold-coin" color="#5ed99b" />
+        </view>
+      </van-grid-item>
+      <van-grid-item
+        text="配送"
+        link-type="navigateTo"
+        url="/pages/manage/m-delivery/m-delivery"
+      >
+        <view slot="icon">
+          <van-icon name="send-gift" color="#25A8FA" info="{{ newOrderNumber > 0 ? newOrderNumber : null }}" />
+        </view>
+      </van-grid-item>
+    </van-grid>
+  </view>
+
+  <view class="bill-block">
+    <van-panel title="经营数据">
+      <view class="bill-content">
+        <view class="bill-info">今日营业额</view>
+        <view class="bill-number">￥{{ todayBillNumber }}</view>
+      </view>
+      <view class="bill-footer">
+        <van-button size="small" color="#2d8cf0" bindtap="refreshBill" loading="{{ isLoading }}" loading-type="spinner">刷新</van-button>
+      </view>
+    </van-panel>
+  </view>
+
+  <view class="print-block">
+    <text wx:if="{{ connected }}" class="text-success">{{ "已连接到" + printName }}</text>
+    <text wx:if="{{ !connected }}" class="text-error">{{ "未连接" }}</text>
+    <van-button color="#2d8cf0" bindtap="jumpPrintPage" block>搜索</van-button>
+  </view>
+
+
+  <!-- <button bindtap="tt">111111</button> -->
+
+  <!--  -->
+</view>

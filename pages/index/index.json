@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-search": "/miniprogram_npm/@vant/weapp/search/index",
+    "van-grid": "/miniprogram_npm/@vant/weapp/grid/index",
+    "van-grid-item": "/miniprogram_npm/@vant/weapp/grid-item/index",
+    "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+    "shopCard": "/components/ShopCard/ShopCard",
+    "van-skeleton": "/miniprogram_npm/@vant/weapp/skeleton/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+  },
+  "enablePullDownRefresh": true
+}

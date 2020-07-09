@@ -1,0 +1,18 @@
+/* pages/user/user.wxss */
+.user {
+  background-color: #2d8cf0;
+  height: 150px;
+  text-align: center;
+}
+
+.user-name {
+  color: #ffffff;
+  padding-top: 10px;
+}
+
+.login-text {
+  /* background-color: #2d8cf0; */
+  color: #ffffff;
+  font-size: 20px;
+}
+

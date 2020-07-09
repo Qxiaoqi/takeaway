@@ -1,0 +1,19 @@
+/* pages/manage/m-bill/m-bill.wxss */
+.tabs-content {
+  /* margin-top: 44px; */
+  padding: 10px;
+}
+
+.bill-content {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bill-info {
+  color: #808695;
+}
+
+.bill-number {
+  padding-top: 10px;
+}

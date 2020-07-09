@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-submit-bar": "/miniprogram_npm/@vant/weapp/submit-bar/index",
+    "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet/index",
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-tag": "/miniprogram_npm/@vant/weapp/tag/index"
+  },
+  "navigationBarTitleText": "确认支付"
+}

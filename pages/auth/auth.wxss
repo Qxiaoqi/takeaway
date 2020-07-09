@@ -1,0 +1,28 @@
+/* pages/auth/auth.wxss */
+page {
+  background-color: #ffffff;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100rpx;
+}
+
+.main-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #2b85e4;
+  font-size: 20px;
+}
+
+.sub-title {
+  text-align: center;
+  color: #808695;
+}
+
+.button {
+  padding: 50px 20px;
+}

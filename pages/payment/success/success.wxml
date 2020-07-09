@@ -1,0 +1,19 @@
+<!--pages/payment/success/success.wxml-->
+<view class="container">
+  <view class="content">
+    <van-icon
+      name="checked"
+      color="#2d8cf0"
+      size="200rpx"
+    />
+    <view class="header">
+      <view class="main-title">支付成功</view>
+      <view class="sub-title">
+        已支付成功，请耐心等待送达
+      </view>
+    </view>
+  </view>
+  <view class="button">
+    <van-button type="primary" bindtap="jumpMenu" block>完成</van-button>
+  </view>
+</view>

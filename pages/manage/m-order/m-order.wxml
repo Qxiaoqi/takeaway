@@ -1,0 +1,155 @@
+<!--pages/manage/m-order/m-order.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+
+  <!-- 选择日期 -->
+  <!-- <van-sticky>
+    <van-cell
+      wx:if="{{ timeType === 'day' || timeType === 'month' }}"
+      title="选择时间"
+      is-link
+      value="{{ timeType === 'day' ? day + '日' : timeType === 'month' ? month + '月' : null }}"
+      arrow-direction="down"
+      bind:click="selectTime"
+    />
+    <van-cell
+      wx:if="{{ timeType === 'total'}}"
+      is-link
+      arrow-direction="down"
+      title="选择时间"
+      value="全部"
+    />
+  </van-sticky> -->
+
+  <van-tabs active="{{ timeType }}" id="tabs" color="#2d8cf0" bind:change="choseType" sticky>
+    <van-tab title="日订单" name="day">
+      <!-- 选择日期 -->
+      <!-- <van-sticky offset-top="{{ 44 }}"> -->
+        <van-cell
+          is-link
+          value="{{ day }}日"
+          arrow-direction="down"
+          bind:click="selectTime"
+        >
+          <view slot="title">
+            <view class="van-cell-text">选择日期
+              <van-loading size="20px" class="loading" wx:if="{{ loadingDay }}" />
+            </view>
+          </view>
+        </van-cell>
+      <!-- </van-sticky> -->
+
+      <view class="tabs-content">
+        <!-- 订单列表 -->
+        <view class="order-list">
+          <view wx:for="{{ orderDayList }}" wx:key="index">
+            <view class="order-card" data-idx="day-{{ index }}" bindtap="jumpOrder">
+              <van-panel title="{{ item.name }}" desc="{{ item.createdTime }}" status="{{ item.statusStr }}">
+                <view class="order-content">
+                  <view class="list">{{ item.userAddress }}</view>
+                  <text class="order-dish">{{ item.dishList }}</text>
+                  <text class="order-price">￥{{ item.priceDel }}</text>
+                </view>
+                <!-- <view slot="footer" class="order-footer">
+                  <van-button size="small">查看二维码</van-button>
+                </view> -->
+              </van-panel>
+            </view>
+          </view>
+        </view>
+
+        <view class="tips" wx:if="{{ orderDayList.length === 0 }}">暂无订单</view>
+      </view>
+    </van-tab>
+
+    <van-tab title="月订单" name="month">
+      <!-- 选择日期 -->
+      <!-- <van-sticky offset-top="{{ 44 }}"> -->
+        <van-cell
+          is-link
+          value="{{ month }}月"
+          arrow-direction="down"
+          bind:click="selectTime"
+        >
+          <view slot="title">
+            <view class="van-cell-text">选择月份
+              <van-loading size="20px" class="loading" wx:if="{{ loadingMonth }}" />
+            </view>
+          </view>
+        </van-cell>
+      <!-- </van-sticky> -->
+
+      <view class="tabs-content">
+        <view class="order-list">
+          <view wx:for="{{ orderMonthList }}" wx:key="index">
+            <view class="order-card" data-idx="month-{{ index }}" bindtap="jumpOrder">
+              <van-panel title="{{ item.name }}" desc="{{ item.createdTime }}" status="{{ item.statusStr }}">
+                <view class="order-content">
+                  <view class="list">{{ item.userAddress }}</view>
+                  <text class="order-dish">{{ item.dishList }}</text>
+                  <text class="order-price">￥{{ item.priceDel }}</text>
+                </view>
+              </van-panel>
+            </view>
+          </view>
+        </view>
+        <view class="tips" wx:if="{{ orderMonthList.length === 0 }}">暂无订单</view>
+      </view>
+    </van-tab>
+    
+    <van-tab title="总订单" name="total">
+      <!-- 选择日期 -->
+      <!-- <van-sticky offset-top="{{ 44 }}"> -->
+        <van-cell
+          is-link
+          value="全部"
+          arrow-direction="down"
+        >
+          <view slot="title">
+            <view class="van-cell-text">选择时间
+              <van-loading size="20px" class="loading" wx:if="{{ loadingTotal }}" />
+            </view>
+          </view>
+        </van-cell>
+      <!-- </van-sticky> -->
+      <!-- 总订单不需要选择时间 -->
+      <view class="tabs-content">
+        <!-- 订单列表 -->
+        <view class="order-list">
+          <view wx:for="{{ orderTotalList }}" wx:key="index">
+            <view class="order-card" data-idx="total-{{ index }}" bindtap="jumpOrder">
+              <van-panel title="{{ item.name }}" desc="{{ item.createdTime }}" status="{{ item.statusStr }}">
+                <view class="order-content">
+                  <view class="list">{{ item.userAddress }}</view>
+                  <text class="order-dish">{{ item.dishList }}</text>
+                  <text class="order-price">￥{{ item.priceDel }}</text>
+                </view>
+              </van-panel>
+            </view>
+          </view>
+        </view>
+        <view class="bottom-bar">
+          <van-loading size="24px" wx:if="{{ loadingTotal }}">加载中...</van-loading>
+          <text class="tips" wx:if="{{ isTotalEnd }}">没有新的订单了</text>
+        </view>
+        <!-- <view class="tips" wx:if="{{ orderTotalList.length === 0 }}">暂无订单</view> -->
+      </view>
+    </van-tab>
+  </van-tabs>
+
+  <!-- 弹框选择时间 -->
+  <van-popup
+    show="{{ show }}"
+    position="bottom"
+    bind:close="closePopup"
+  >
+    <van-picker
+      show-toolbar
+      columns="{{ timeData }}"
+      default-index="{{ timeType === 'day' ? day : timeType === 'month' ? month : null }}"
+      title="选择时间"
+      bind:cancel="closePopup"
+      bind:confirm="confirmTime"
+    />
+  </van-popup>
+</view>

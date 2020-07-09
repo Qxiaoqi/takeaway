@@ -1,0 +1,19 @@
+<!--pages/dessert/dessert.wxml-->
+<view class="container">
+  <view class="content">
+    <!-- <block wx:for="{{ 10 }}" wx:if="{{ loading }}" wx:key="index">
+      <van-skeleton
+        title
+        avatar
+        row="2"
+        animate="{{ true }}"
+        avatar-shape="square"
+        avatar-size="50px"
+      />
+    </block> -->
+    <view wx:for="{{ shopData }}" wx:key="id">
+      <shopCard shop="{{ item }}"></shopCard>
+    </view>
+  </view>
+  <view class="tips-content" wx:if="{{ isTips }}">该类别暂时没有店铺</view>
+</view>

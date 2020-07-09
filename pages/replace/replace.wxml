@@ -1,0 +1,9 @@
+<!--pages/replace/replace.wxml-->
+<view class="container">
+  <view class="content">
+    <view wx:for="{{ shopData }}" wx:key="id">
+      <shopCard shop="{{ item }}"></shopCard>
+    </view>
+  </view>
+  <view class="tips-content" wx:if="{{ isTips }}">该类别暂时没有店铺</view>
+</view>

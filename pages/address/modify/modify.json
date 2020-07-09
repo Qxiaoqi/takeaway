@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "修改地址"
+}

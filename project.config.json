@@ -1,0 +1,216 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wxcde323bee5764b74",
+	"projectname": "takeaway",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "清真餐厅",
+					"pathName": "pages/muslim/muslim",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "订单页面",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "我的页面",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "菜单页面",
+					"pathName": "pages/menu/menu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/order/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收货地址",
+					"pathName": "pages/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "新增地址页面",
+					"pathName": "pages/address/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "修改地址页面",
+					"pathName": "pages/address/modify/modify",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认订单页面",
+					"pathName": "pages/payment/payment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家入驻",
+					"pathName": "pages/apply/apply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "商家端首页",
+					"pathName": "pages/manage/m-index/m-index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家端订单页面",
+					"pathName": "pages/manage/m-order/m-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家订单详情",
+					"pathName": "pages/manage/m-order/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "店铺管理页面",
+					"pathName": "pages/manage/m-menu/m-menu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "添加菜品页面",
+					"pathName": "pages/manage/m-menu/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改店铺信息",
+					"pathName": "pages/manage/m-shop/m-shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改菜品",
+					"pathName": "pages/manage/m-menu/modify/modify",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家配送",
+					"pathName": "pages/manage/m-delivery/m-delivery",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付成功页面",
+					"pathName": "pages/payment/success/success",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "蓝牙打印",
+					"pathName": "pages/manage/m-print/m-print",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家端账单",
+					"pathName": "pages/manage/m-bill/m-bill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "请求授权登录",
+					"pathName": "pages/auth/auth",
+					"scene": null
+				}
+			]
+		}
+	}
+}

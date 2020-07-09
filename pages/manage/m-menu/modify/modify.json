@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-uploader": "/miniprogram_npm/@vant/weapp/uploader/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "修改菜品"
+}

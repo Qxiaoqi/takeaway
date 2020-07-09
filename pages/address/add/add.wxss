@@ -1,0 +1,5 @@
+/* pages/address/add/add.wxss */
+
+.submit {
+  padding: 10px;
+}

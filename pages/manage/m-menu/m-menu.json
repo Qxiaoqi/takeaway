@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-card": "/miniprogram_npm/@vant/weapp/card/index",
+    "van-sticky": "/miniprogram_npm/@vant/weapp/sticky/index",
+    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index"
+  },
+  "navigationBarTitleText": "店铺管理"
+}

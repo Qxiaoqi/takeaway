@@ -1,0 +1,18 @@
+<!--components/ShopCard/ShopCard.wxml-->
+<view class="shop-card clearfix" bindtap="jumpShop">
+  <view class="left">
+    <!-- <view class="left-content"> -->
+      <image src="{{ shop.avatar }}" mode="aspectFit" class="shop-image"></image>
+    <!-- </view> -->
+  </view>
+  <view class="right">
+    <view class="shop-header">
+      <view class="shop-title">{{ shop.name }}
+        <van-tag
+          color="{{ shop.restaurantStatusCode === 1 ? '#19be6b' : '#c5c8ce' }}"
+        >{{ shop.restaurantStatusCode === 1 ? '营业中' : '休息中' }}</van-tag>
+      </view>
+    </view>
+    <text class="shop-desc">{{ shop.description }}</text>
+  </view>
+</view>

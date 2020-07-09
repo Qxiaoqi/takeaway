@@ -1,0 +1,12 @@
+/* pages/address/modify/modify.wxss */
+.submit {
+  padding: 10px;
+}
+
+.delete-submit {
+  padding: 10px;
+}
+
+.set-submit {
+  padding: 10px;
+}

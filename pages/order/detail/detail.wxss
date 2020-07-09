@@ -1,0 +1,40 @@
+/* pages/order/detail/detail.wxss */
+/* page {
+  background-color: #f6f6f6;
+} */
+
+.container {
+  padding: 10px;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.header-title {
+  font-size: 18px;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: #929292;
+}
+
+.price-panel,
+.carry-panel {
+  margin-bottom: 10px;
+}
+
+.price-panel .van-cell__value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.carry-panel .van-cell__value {
+  text-align: left;
+}
+
+.cell-value {
+  color: #929292;
+}

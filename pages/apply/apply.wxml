@@ -1,0 +1,63 @@
+<!--pages/apply/apply.wxml-->
+<view class="container">
+  <view class="content">
+    <van-toast id="van-toast" />
+    <van-cell-group>
+      <van-field
+        label="姓名："
+        placeholder="请输入名称"
+        bind:input="setName"
+      />
+
+      <van-field
+        label="信息描述："
+        placeholder="请输入描述"
+        bind:input="setDesc"
+      />
+      <van-cell
+        title="地址选择"
+        is-link
+        value="{{ location }}"
+        arrow-direction="down"
+        bind:click="selectLocation"
+      />
+      <van-cell
+        title="申请代拿类型"
+        is-link
+        value="{{ shopType }}"
+        arrow-direction="down"
+        bind:click="selectShopType"
+      />
+    </van-cell-group>
+    <!-- 地址选择弹出层 -->
+    <van-action-sheet
+      show="{{ show }}"
+      round="{{ false }}"
+      actions="{{ select }}"
+      bind:close="closeSheet"
+      bind:select="choseSelect"
+    />
+    <!-- 店铺类别弹出层 -->
+    <van-action-sheet
+      show="{{ showShopType }}"
+      round="{{ false }}"
+      actions="{{ selectShopType }}"
+      bind:close="closeTypeSheet"
+      bind:select="choseTypeSelect"
+    />
+    <view class="upload">
+      <view class="cell-title">身份认证：</view>
+      <van-uploader
+        file-list="{{ fileList }}"
+        max-count="1"
+        bind:after-read="afterRead"
+        bind:delete="deleteImg"
+      />
+    </view>
+  </view>
+  <view class="submit">
+    <van-button type="primary" bindtap="saveShop" block>骑手认证</van-button>
+  </view>
+
+  <!-- {{ show }} -->
+</view>

@@ -1,0 +1,82 @@
+<!--pages/manage/m-delivery/m-delivery.wxml-->
+<view class="container">
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+  <!-- <button bindtap="tt">111111</button> -->
+
+  <van-tabs active="{{ statusType }}" id="tabs" color="#2d8cf0" bind:change="choseType" sticky>
+    <van-tab title="准备中" info="{{ newOrderNumber > 0 ? newOrderNumber : null }}" name="preparation">
+
+      <view class="tabs-content">
+
+        <!-- 订单列表 -->
+        <view class="order-list">
+          <view wx:for="{{ prepOrder }}" wx:key="index">
+            <view class="order-card" data-idx="prep-{{ index }}" bindtap="jumpOrder">
+              <van-panel title="{{ item.name }}" desc="{{ item.createdTime }}" status="{{ item.statusStr }}" use-footer-slot>
+                <view class="order-content">
+                  <view class="address">{{ item.userAddress }}</view>
+                  <view class="dish-content">
+                    <view class="dish-list" wx:for="{{ item.dishArr }}" wx:key="index">
+                      <text class="dish-name">{{ item }}</text>
+                      <text class="dish-number">×1</text>
+                    </view>
+                  </view>
+                  <view class="total-list">
+                    <text class="total-name">总价</text>
+                    <text class="price">￥{{ item.priceDel }}</text>
+                  </view>
+                  <view wx:if="{{ item.remark !== '' }}" class="remark">备注：{{ item.remark }}</view>
+                </view>
+                <view slot="footer" class="order-footer">
+                  <van-button type="primary" data-idx="prep-{{ index }}" catch:tap="readyButton">准备完成</van-button>
+                </view>
+              </van-panel>
+            </view>
+          </view>
+        </view>
+        <view class="bottom-bar">
+          <van-loading size="24px" wx:if="{{ loadingPrep }}">加载中...</van-loading>
+          <text class="tips" wx:if="{{ isPrepEnd }}">没有新的订单了</text>
+        </view>
+      </view>
+    </van-tab>
+
+    <van-tab title="配送中" name="distribution">
+
+      <view class="tabs-content">
+        <!-- 订单列表 -->
+        <view class="order-list">
+          <view wx:for="{{ DistOrder }}" wx:key="index">
+            <view class="order-card" data-idx="dist-{{ index }}" bindtap="jumpOrder">
+              <van-panel title="{{ item.name }}" desc="{{ item.createdTime }}" status="{{ item.statusStr }}" use-footer-slot>
+                <view class="order-content">
+                  <view class="address">{{ item.userAddress }}</view>
+                  <view class="dish-content">
+                    <view class="dish-list" wx:for="{{ item.dishArr }}" wx:key="index">
+                      <text class="dish-name">{{ item }}</text>
+                      <text class="dish-number">×1</text>
+                    </view>
+                  </view>
+                  <view class="total-list">
+                    <text class="total-name">总价</text>
+                    <text class="price">￥{{ item.priceDel }}</text>
+                  </view>
+                  <view wx:if="{{ item.remark !== '' }}" class="remark">备注：{{ item.remark }}</view>
+                </view>
+                <view slot="footer" class="order-footer">
+                  <van-button type="primary" data-idx="dist-{{ index }}" catch:tap="deliveryReadyButton">配送完成</van-button>
+                </view>
+              </van-panel>
+            </view>
+          </view>
+        </view>
+        <view class="bottom-bar">
+          <van-loading size="24px" wx:if="{{ loadingDist }}">加载中...</van-loading>
+          <text class="tips" wx:if="{{ isDistEnd }}">没有新的订单了</text>
+        </view>
+      </view>
+    </van-tab>
+
+  </van-tabs>
+</view>

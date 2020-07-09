@@ -1,0 +1,85 @@
+<!--pages/order/detail/detail.wxml-->
+<view class="container">
+  <!-- 订单详情头部 -->
+  <view class="header">
+    <van-cell-group>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text header-title">{{ orderData.statusStr }} ></view>
+        </view>
+      </van-cell>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text header-subtitle">{{ orderData.orderStatusCode === 1024 ? '感谢您的信任，期待再次光临' : '订单未完成，请耐心等待' }}</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <!-- 价格信息 -->
+  <view class="price-panel">
+    <van-cell-group>
+      <block wx:for="{{ orderData.dishArr }}" wx:key="index">
+        <van-cell value="×1">
+          <view slot="title">
+            <view class="van-cell-text">{{ item }}</view>
+          </view>
+        </van-cell>
+      </block>
+      <van-cell value="￥{{ orderData.carryPrice }}">
+        <view slot="title">
+          <view class="van-cell-text">配送费</view>
+        </view>
+      </van-cell>
+      <van-cell value="￥{{ orderData.priceDel }}">
+        <view slot="title">
+          <view class="van-cell-text">共计</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <!-- 配送信息 -->
+  <view class="carry-panel">
+    <van-cell-group>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text cell-title">送达时间：
+            <text class="van-cell-text cell-value">{{ orderData.arrivedTime }}</text>
+          </view>
+        </view>
+      </van-cell>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text cell-title">送货地址：
+            <text class="van-cell-text cell-value">{{ orderData.address }}</text>
+          </view>
+        </view>
+      </van-cell>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text cell-title">配送方式：
+            <text class="van-cell-text cell-value">{{ orderData.carryWay }}</text>
+          </view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <!-- 订单信息 -->
+  <view class="order-panel">
+    <van-cell-group>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text cell-title">订单号：
+            <text class="van-cell-text cell-value">{{ orderData.orderCode }}</text>
+          </view>
+        </view>
+      </van-cell>
+      <van-cell>
+        <view slot="title">
+          <view class="van-cell-text cell-title">下单时间：
+            <text class="van-cell-text cell-value">{{ orderData.createdTime }}</text>
+          </view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </view>
+</view>

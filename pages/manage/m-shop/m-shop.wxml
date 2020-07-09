@@ -1,0 +1,63 @@
+<!--pages/manage/m-shop/m-shop.wxml-->
+<view class="container">
+  <view class="content">
+    <van-toast id="van-toast" />
+    <van-cell-group>
+      <van-field
+        value="{{ nameOld }}"
+        label="店铺名称："
+        placeholder="请输入店铺名"
+        bind:input="setName"
+      />
+
+      <van-field
+        value="{{ descOld }}"
+        label="描述信息："
+        placeholder="请输入店铺描述"
+        bind:input="setDesc"
+      />
+      <van-cell
+        title="地址选择"
+        is-link
+        value="{{ location }}"
+        arrow-direction="down"
+        bind:click="selectLocation"
+      />
+      <van-cell
+        title="店铺类别"
+        is-link
+        value="{{ shopType }}"
+        arrow-direction="down"
+        bind:click="selectShopType"
+      />
+    </van-cell-group>
+    <!-- 地址选择弹出层 -->
+    <van-action-sheet
+      show="{{ showAddress }}"
+      round="{{ false }}"
+      actions="{{ selectAddress }}"
+      bind:close="closeAddressSheet"
+      bind:select="choseAddressSelect"
+    />
+    <!-- 店铺类别弹出层 -->
+    <van-action-sheet
+      show="{{ showShopType }}"
+      round="{{ false }}"
+      actions="{{ selectShopType }}"
+      bind:close="closeTypeSheet"
+      bind:select="choseTypeSelect"
+    />
+    <view class="upload">
+      <view class="cell-title">店铺图片：</view>
+      <van-uploader
+        file-list="{{ fileList }}"
+        max-count="1"
+        bind:after-read="afterRead"
+        bind:delete="deleteImg"
+      />
+    </view>
+  </view>
+  <view class="submit">
+    <van-button type="primary" bindtap="saveShop" block>修改店铺</van-button>
+  </view>
+</view>

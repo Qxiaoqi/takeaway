@@ -1,0 +1,71 @@
+/* pages/manage/m-delivery/m-delivery.wxss */
+.order-card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.order-content {
+  padding: 10px 16px 10px 16px;
+  font-size: 14px;
+}
+
+.address {
+  padding-bottom: 10px;
+  color: #515a6e;
+}
+
+.remark {
+  color: #2d8cf0;
+  border-top: 1px solid #dcdee2;
+  padding-top: 10px;
+}
+
+.dish-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #dcdee2;
+}
+
+.dish-list {
+  padding-top: 5px;
+}
+
+.dish-name,
+.total-name {
+  /* font-size: 13px; */
+  color: #515a6e;
+}
+
+.dish-number {
+  /* font-size: 13px; */
+  color: #c5c8ce;
+  float: right;
+}
+
+.total-list {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #dcdee2;
+}
+
+.price {
+  float: right;
+  color: #ed4014;
+}
+
+.order-footer {
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+.bottom-bar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.tips {
+  font-size: 13px;
+  color: #808695;
+}

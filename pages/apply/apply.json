@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet/index",
+    "van-uploader": "/miniprogram_npm/@vant/weapp/uploader/index"
+  },
+  "navigationBarTitleText": "骑手认证"
+}

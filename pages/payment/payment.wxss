@@ -1,0 +1,70 @@
+/* pages/payment/payment.wxss */
+.container {
+  padding: 10px 10px 100px 10px;
+}
+
+.address-content {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.address-content .icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 20px;
+  color: #929292;
+}
+
+.address-item {
+  display: table-cell;
+}
+
+.item-header {
+  font-size: 14px;
+}
+
+.item-header text {
+  padding-left: 5px;
+  color: #929292;
+}
+
+.item-content {
+  color: #929292;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.price-panel,
+.other-panel {
+  margin-top: 10px;
+}
+
+.address-panel,
+.price-panel,
+.other-panel {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 3px #d6d6d6;
+}
+
+.other-panel .van-field__body--textarea {
+  margin-top: 0;
+}
+
+.panel-title {
+  font-weight: 700;
+}
+
+.list-item {
+  margin-bottom: 20px;
+}
+
+.count-text {
+  color: #929292;
+}
+
+.add-text {
+  color: #929292;
+}
